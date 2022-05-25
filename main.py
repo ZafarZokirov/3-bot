@@ -1,25 +1,58 @@
-import logging
-
-from aiogram import Bot, Dispatcher, executor, types
-
-API_TOKEN = '5289904004:AAEiZ8ow_3WbVbz_5CWkqt-2w-9c6XWINsA'
-
-logging.basicConfig(level=logging.INFO)
-
-bot = Bot(token="5289904004:AAEiZ8ow_3WbVbz_5CWkqt-2w-9c6XWINsA")
-dp = Dispatcher(bot)
+import requests
+from Cfg import open_weather
+import requests
+from pprint import pprint
 
 
-@dp.message_handler(commands=['start', 'help'])
-async def send_welcome(message: types.Message):
-    await message.reply("bizning menu\nSomsa\nManti\nShashlik")
+def get_weather(city, token):
+    try:
+        result = requests.get(f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={token}")
+        data = result.json()
+        pprint(data)
+        shahar = data["name"]
+        temp = data["main"]["temp"]
+        namlik= data["main"]["humidity"]
+        tezlik=data["wind"]["speed"]
+        print(f"shahar {shahar}\n"
+              f"temp {temp}\n"
+              f"namlik {namlik}\n"
+              f"tezlik {tezlik}\n")
+    except Exception as ex:
+        pass
+def main():
+    city = input("Shahar nomi kirit:")
+    get_weather(city, open_weather)
+main()
 
 
-@dp.message_handler(text="somsa")
-async def somsa(message: types.Message):
-    await  message.reply("Somsa 3000 som")
 
 
 
-if __name__ == '__main__':
-    executor.start_polling(dp, skip_updates=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
