@@ -1,2 +1,20 @@
-# 3-bot
-satASDRTAR
+#Jahongir_bot
+#Jahongir_bot
+#Jahongir_bot
+#Jahongir_bot
+#Jahongir_bot
+#Jahongir_bot
+#Jahongir_bot
+#Jahongir_bot
+#Jahongir_bot
+#Jahongir_bot
+#Jahongir_bot
+#Jahongir_bot
+#Jahongir_bot
+#Jahongir_bot
+#Jahongir_bot
+#Jahongir_bot
+#Jahongir_bot
+#Jahongir_bot
+#Jahongir_bot
+#Jahongir_bot
